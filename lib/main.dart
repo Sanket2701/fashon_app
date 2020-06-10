@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+import 'package:fashonApp/components/horizontal_list.dart';
+import 'package:fashonApp/components/product_grid.dart';
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -124,6 +127,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: <Widget>[
+          // Top part i.e Carousel
           Container(
             height: 200.0,
             child: Carousel(
@@ -139,6 +143,24 @@ class _HomePageState extends State<HomePage> {
               dotSize: 4.0,
               autoplay: true,
             ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Categories',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+          HorizontalList(),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Recent Products',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+          Container(
+            child: Products(),
           )
         ],
       ),

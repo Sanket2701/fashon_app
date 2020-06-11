@@ -1,3 +1,4 @@
+import 'package:fashonApp/pages/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class Products extends StatefulWidget {
@@ -44,12 +45,13 @@ class _ProductsState extends State<Products> {
       'price': 750,
     }
   ];
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
         itemCount: productList.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2
+            crossAxisCount: 2
         ),
         itemBuilder: (BuildContext context, int index){
           return SingleProduct(
@@ -79,35 +81,42 @@ class SingleProduct extends StatelessWidget {
         tag: productName,
         child: Material(
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) {
+                  return ProductDetails(
+                      productName, productImage, productOldPrice, productPrice);
+                }),
+              );
+            },
             child: GridTile(
-                child: Image.asset(productImage),
-                footer: Container(
-                  color: Colors.white70,
-                  child: ListTile(
-                    leading: Text(
-                      productName,
-                      style: TextStyle(
+              child: Image.asset(productImage),
+              footer: Container(
+                color: Colors.white70,
+                child: ListTile(
+                  leading: Text(
+                    productName,
+                    style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold
-                      ),
                     ),
-                    title: Text(
-                      '‎₹$productPrice',
-                      style: TextStyle(
+                  ),
+                  title: Text(
+                    '‎₹$productPrice',
+                    style: TextStyle(
                         color: Colors.red,
                         fontWeight: FontWeight.bold
-                      ),
                     ),
-                    subtitle: Text(
-                      '‎₹$productOldPrice',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        decoration: TextDecoration.lineThrough,
-                      ),
+                  ),
+                  subtitle: Text(
+                    '‎₹$productOldPrice',
+                    style: TextStyle(
+                      color: Colors.black87,
+                      decoration: TextDecoration.lineThrough,
                     ),
                   ),
                 ),
+              ),
             ),
           ),
         ),

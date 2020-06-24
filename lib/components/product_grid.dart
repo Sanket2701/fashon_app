@@ -10,37 +10,37 @@ class _ProductsState extends State<Products> {
   var productList = [
     {
       'name': 'Blazer',
-      'picture': 'images/products/blazer1.jpeg',
+      'image': 'images/products/blazer1.jpeg',
       'old_price': 3000,
       'price': 2500,
     },
     {
       'name': 'Dress',
-      'picture': 'images/products/dress1.jpeg',
+      'image': 'images/products/dress1.jpeg',
       'old_price': 2000,
       'price': 1750,
     },
     {
       'name': 'Heels',
-      'picture': 'images/products/hills1.jpeg',
+      'image': 'images/products/hills1.jpeg',
       'old_price': 1000,
       'price': 800,
     },
     {
       'name': 'Pants',
-      'picture': 'images/products/pants.jpeg',
+      'image': 'images/products/pants1.jpeg',
       'old_price': 1200,
       'price': 1000,
     },
     {
       'name': 'Shoes',
-      'picture': 'images/products/shoe1.jpeg',
+      'image': 'images/products/shoe1.jpeg',
       'old_price': 700,
       'price': 500,
     },
     {
       'name': 'Skirt',
-      'picture': 'images/products/skt2.jpeg',
+      'image': 'images/products/skt2.jpeg',
       'old_price': 1000,
       'price': 750,
     }
@@ -50,13 +50,12 @@ class _ProductsState extends State<Products> {
   Widget build(BuildContext context) {
     return GridView.builder(
         itemCount: productList.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2
-        ),
-        itemBuilder: (BuildContext context, int index){
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (BuildContext context, int index) {
           return SingleProduct(
             productList[index]['name'],
-            productList[index]['picture'],
+            productList[index]['image'],
             productList[index]['old_price'],
             productList[index]['price'],
           );
@@ -70,7 +69,6 @@ class SingleProduct extends StatelessWidget {
   final int productOldPrice;
   final int productPrice;
 
-
   SingleProduct(this.productName, this.productImage, this.productOldPrice,
       this.productPrice);
 
@@ -78,7 +76,7 @@ class SingleProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Hero(
-        tag: productName,
+        tag: Text(productName),
         child: Material(
           child: InkWell(
             onTap: () {
@@ -97,16 +95,12 @@ class SingleProduct extends StatelessWidget {
                   leading: Text(
                     productName,
                     style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                    ),
+                        color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                   title: Text(
                     '‎₹$productPrice',
                     style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold
-                    ),
+                        color: Colors.red, fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(
                     '‎₹$productOldPrice',

@@ -1,3 +1,4 @@
+import 'package:fashonApp/components/product_grid.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -30,13 +31,6 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
             onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          ),
         ],
       ),
       body: ListView(
@@ -54,7 +48,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   leading: Text(
                     widget.product_name,
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
                   ),
                   title: Row(
                     children: <Widget>[
@@ -180,11 +174,11 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
               IconButton(
                   icon: Icon(Icons.add_shopping_cart, color: Colors.red,),
-                  onPressed: null
-              ),
+                  onPressed: () {}),
               IconButton(
                   icon: Icon(Icons.favorite_border, color: Colors.red,),
-                  onPressed: null)
+                  onPressed: () {}
+              )
             ],
           ),
           Divider(),
@@ -217,8 +211,81 @@ class _ProductDetailsState extends State<ProductDetails> {
               )
             ],
           ),
+          Divider(),
+          Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text('Similar Products')),
+          Container(
+            height: 360.0,
+            child: SimilarProducts(),
+          )
         ],
       ),
     );
   }
 }
+
+class SimilarProducts extends StatefulWidget {
+
+  @override
+  _SimilarProductsState createState() => _SimilarProductsState();
+}
+
+class _SimilarProductsState extends State<SimilarProducts> {
+
+  var productList = [
+    {
+      'name': 'Blazer',
+      'picture': 'images/products/blazer1.jpeg',
+      'old_price': 3000,
+      'price': 2500,
+    },
+    {
+      'name': 'Dress',
+      'picture': 'images/products/dress1.jpeg',
+      'old_price': 2000,
+      'price': 1750,
+    },
+    {
+      'name': 'Heels',
+      'picture': 'images/products/hills1.jpeg',
+      'old_price': 1000,
+      'price': 800,
+    },
+    {
+      'name': 'Pants',
+      'picture': 'images/products/pants.jpeg',
+      'old_price': 1200,
+      'price': 1000,
+    },
+    {
+      'name': 'Shoes',
+      'picture': 'images/products/shoe1.jpeg',
+      'old_price': 700,
+      'price': 500,
+    },
+    {
+      'name': 'Skirt',
+      'picture': 'images/products/skt2.jpeg',
+      'old_price': 1000,
+      'price': 750,
+    }
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+        itemCount: productList.length,
+        gridDelegate:
+        SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (BuildContext context, int index) {
+          return SingleProduct(
+            productList[index]['name'],
+            productList[index]['picture'],
+            productList[index]['old_price'],
+            productList[index]['price'],
+          );
+        });
+  }
+}
+

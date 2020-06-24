@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-
 import 'package:fashonApp/components/horizontal_list.dart';
 import 'package:fashonApp/components/product_grid.dart';
+import 'package:fashonApp/pages/shopping_cart.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -36,7 +36,13 @@ class _HomePageState extends State<HomePage> {
               Icons.shopping_cart,
               color: Colors.white,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Cart()
+                  ));
+            },
           ),
         ],
       ),
@@ -65,7 +71,10 @@ class _HomePageState extends State<HomePage> {
                 ),
                 title: Text('Home Page'),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
             ),
             InkWell(
               child: ListTile(
@@ -142,6 +151,7 @@ class _HomePageState extends State<HomePage> {
               ],
               dotSize: 4.0,
               autoplay: true,
+              dotBgColor: Colors.transparent,
             ),
           ),
           Padding(

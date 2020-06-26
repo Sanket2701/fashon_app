@@ -1,5 +1,5 @@
-import 'package:fashonApp/main.dart';
 import 'package:flutter/material.dart';
+//import './pages/home.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -14,9 +14,9 @@ class _CartState extends State<Cart> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
-          },
+          //   Navigator.push(
+          //       context, MaterialPageRoute(builder: (context) => HomePage()));
+           },
         ),
         elevation: 0.0,
         title: Text('Cart'),

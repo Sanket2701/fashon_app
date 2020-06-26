@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "81494062915",
+    "firebase_url": "https://e-commerce-92faa.firebaseio.com",
+    "project_id": "e-commerce-92faa",
+    "storage_bucket": "e-commerce-92faa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81494062915:android:e14f157c714a102fbb61f6",
+        "android_client_info": {
+          "package_name": "com.example.fashonApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81494062915-1rnmhtm8sp3hhh1gp9luv8m11c5ofv73.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fashonApp",
+            "certificate_hash": "5505f00ea4d1c072188c18a7760a064a2857cd37"
+          }
+        },
+        {
+          "client_id": "81494062915-iad11mhk06j6p9ceqhqb1elmqtrjurt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfsyTEhdmozKctnAzoP0gCxZvoQ7RFG8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81494062915-iad11mhk06j6p9ceqhqb1elmqtrjurt8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

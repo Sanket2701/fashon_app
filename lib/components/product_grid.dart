@@ -28,13 +28,13 @@ class _ProductsState extends State<Products> {
     },
     {
       'name': 'Pants',
-      'image': 'images/products/pants1.jpeg',
+      'image': 'images/products/pants1.jpg',
       'old_price': 1200,
       'price': 1000,
     },
     {
       'name': 'Shoes',
-      'image': 'images/products/shoe1.jpeg',
+      'image': 'images/products/shoe1.jpg',
       'old_price': 700,
       'price': 500,
     },
@@ -59,7 +59,9 @@ class _ProductsState extends State<Products> {
             productList[index]['old_price'],
             productList[index]['price'],
           );
-        });
+        },
+        physics: ClampingScrollPhysics(),
+        shrinkWrap: true,);
   }
 }
 

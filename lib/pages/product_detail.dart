@@ -254,13 +254,13 @@ class _SimilarProductsState extends State<SimilarProducts> {
     },
     {
       'name': 'Pants',
-      'picture': 'images/products/pants.jpeg',
+      'picture': 'images/products/pants1.jpg',
       'old_price': 1200,
       'price': 1000,
     },
     {
       'name': 'Shoes',
-      'picture': 'images/products/shoe1.jpeg',
+      'picture': 'images/products/shoe1.jpg',
       'old_price': 700,
       'price': 500,
     },
